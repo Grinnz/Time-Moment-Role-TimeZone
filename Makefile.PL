@@ -21,10 +21,10 @@ my %WriteMakefileArgs = (
     "Time::Moment" => "0.18"
   },
   "TEST_REQUIRES" => {
-    "DateTime::TimeZone" => 0,
     "ExtUtils::MakeMaker" => 0,
     "File::Spec" => 0,
-    "Test::More" => "0.88"
+    "Test::More" => "0.88",
+    "Test::Needs" => 0
   },
   "VERSION" => "0.001",
   "test" => {
@@ -34,11 +34,11 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
-  "DateTime::TimeZone" => 0,
   "ExtUtils::MakeMaker" => 0,
   "File::Spec" => 0,
   "Role::Tiny" => "2.000001",
   "Test::More" => "0.88",
+  "Test::Needs" => 0,
   "Time::Moment" => "0.18"
 );
 
