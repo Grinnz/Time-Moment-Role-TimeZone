@@ -24,7 +24,7 @@ sub with_time_zone_offset_same_local {
 
 =head1 NAME
 
-Time::Moment::Role::TimeZone - Apply time zone objects to Time::Moment
+Time::Moment::Role::TimeZone - Adjust Time::Moment with time zone objects
 
 =head1 SYNOPSIS
 

@@ -1,5 +1,5 @@
 {
-   "abstract" : "Apply time zone objects to Time::Moment",
+   "abstract" : "Adjust Time::Moment with time zone objects",
    "author" : [
       "Dan Book <dbook@cpan.org>"
    ],

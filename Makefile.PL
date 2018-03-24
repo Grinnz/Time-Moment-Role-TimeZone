@@ -7,7 +7,7 @@ use 5.008001;
 use ExtUtils::MakeMaker;
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Apply time zone objects to Time::Moment",
+  "ABSTRACT" => "Adjust Time::Moment with time zone objects",
   "AUTHOR" => "Dan Book <dbook\@cpan.org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
