@@ -3,7 +3,7 @@ package Time::Moment::Role::TimeZone;
 use Role::Tiny;
 use Carp ();
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 requires qw(with_offset_same_instant with_offset_same_local
   utc_rd_as_seconds utc_rd_values local_rd_as_seconds local_rd_values utc_year);
