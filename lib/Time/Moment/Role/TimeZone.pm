@@ -11,14 +11,21 @@ requires qw(epoch offset with_offset_same_instant with_offset_same_local
 
 sub with_time_zone_offset_same_instant {
   my ($self, $tz) = @_;
-  Carp::croak "Unknown time zone object $tz" unless defined $tz and $tz->can('offset_for_datetime');
+  Carp::croak "Invalid time zone object $tz" unless defined $tz and $tz->can('offset_for_datetime');
   return $self->with_offset_same_instant($tz->offset_for_datetime($self) / 60);
 }
 
 sub with_time_zone_offset_same_local {
   my ($self, $tz) = @_;
-  Carp::croak "Unknown time zone object $tz" unless defined $tz and $tz->can('offset_for_local_datetime');
-  return $self->with_offset_same_local($tz->offset_for_local_datetime($self) / 60);
+  Carp::croak "Invalid time zone object $tz" unless defined $tz and $tz->can('offset_for_local_datetime');
+  my ($offset, $error);
+  { local $@;
+    unless (eval { $offset = $tz->offset_for_local_datetime($self); 1 }) {
+      $error = $@ || 'Error';
+    }
+  }
+  Carp::croak $error if defined $error;
+  return $self->with_offset_same_local($offset / 60);
 }
 
 sub with_system_offset_same_instant {
