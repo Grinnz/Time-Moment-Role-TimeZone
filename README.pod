@@ -84,11 +84,11 @@ time.
 
   my $tm = $class->now_utc->with_time_zone_offset_same_instant($tz); # now in $tz
   my $next_day = $tm->plus_days(1)->with_time_zone_offset_same_local($tz); # 1 day from now in $tz
-  my $24h_later = $tm->plus_days(1)->with_time_zone_offset_same_instant($tz); # 86400 seconds from now in $tz
+  my $24h_later = $tm->plus_days(1)->with_time_zone_offset_same_instant($tz); # 24 hours from now in $tz
 
   my $tm = $class->now; # now in system local time
   my $next_day = $tm->plus_days(1)->with_system_offset_same_local; # 1 day from now in system local time
-  my $24h_later = $tm->plus_days(1)->with_system_offset_same_instant; # 86400 seconds from now in system local time
+  my $24h_later = $tm->plus_days(1)->with_system_offset_same_instant; # 24 hours from now in system local time
 
 Note that L</"with_time_zone_offset_same_local"> may throw an exception here if
 the new local time does not exist in that time zone (e.g. between 2 and 3 AM at
