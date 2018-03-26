@@ -24,14 +24,14 @@ sub with_time_zone_offset_same_local {
 sub with_system_offset_same_instant {
   my ($self) = @_;
   my $time = $self->epoch;
-  my $offset = Time::Local::timegm(localtime $time) - $time;
+  my $offset = Time::Local::timegm_nocheck(localtime $time) - $time;
   return $self->with_offset_same_instant($offset / 60);
 }
 
 sub with_system_offset_same_local {
   my ($self) = @_;
   my $time = $self->epoch + $self->offset * 60;
-  my $offset = $time - Time::Local::timelocal(gmtime $time);
+  my $offset = $time - Time::Local::timelocal_nocheck(gmtime $time);
   return $self->with_offset_same_local($offset / 60);
 }
 
