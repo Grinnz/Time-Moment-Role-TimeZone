@@ -86,19 +86,30 @@ according to the given time zone object at that instant.
 Returns a L<Time::Moment> of the same local time, with an offset from UTC
 according to the given time zone object at that local time.
 
+If the local time of the L<Time::Moment> object is ambiguous in the given time
+zone (such as when Daylight Savings Time ends), the time zone object will
+usually use the earliest time. If the local time does not exist (such as when
+Daylight Savings Time starts), the time zone object will usually throw an
+exception.
+
 =head2 with_system_offset_same_instant
 
   my $same_instant = $tm->with_system_offset_same_instant;
 
 As in L</"with_time_zone_offset_same_instant">, but using the system local time
-zone.
+zone via L<perlfunc/"localtime">.
 
 =head2 with_system_offset_same_local
 
   my $same_local = $tm->with_system_offset_same_local;
 
 As in L</"with_time_zone_offset_same_local">, but using the system local time
-zone.
+zone via L<Time::Local/"timelocal">.
+
+If the local time of the L<Time::Moment> object is ambiguous in the system
+local time zone (such as when Daylight Savings Time ends), L<Time::Local> will
+use the earliest time. If the local time does not exist (such as when Daylight
+Savings Time starts), L<Time::Local> will use the time one hour later.
 
 =head1 CAVEATS
 
@@ -117,9 +128,8 @@ time.
   my $24h_later = $tm->plus_days(1)->with_system_offset_same_instant; # 86400 seconds from now in system local time
 
 Note that L</"with_time_zone_offset_same_local"> may throw an exception here if
-the new local time does not exist in that time zone (e.g. between 2 and 3 AM on
-the start of Daylight Savings Time). L</"with_system_offset_same_local">
-(using L<Time::Local>) will return the time one hour later if this occurs.
+the new local time does not exist in that time zone (e.g. between 2 and 3 AM at
+the start of Daylight Savings Time).
 
 =head1 BUGS
 
