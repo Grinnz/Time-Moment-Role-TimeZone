@@ -4,7 +4,7 @@ use Role::Tiny;
 use Carp ();
 use Time::Local ();
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 
 requires qw(epoch offset with_offset_same_instant with_offset_same_local
   utc_rd_as_seconds utc_rd_values local_rd_as_seconds local_rd_values utc_year);
