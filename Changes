@@ -1,4 +1,5 @@
 {{$NEXT}}
+  - Add 1900 to positive years passed to Time::Local so the year is consistently interpreted
 
 0.002     2018-03-26 20:56:20 EDT
   - Add with_system_offset_same_local and with_system_offset_same_instant methods (chansen)
