@@ -40,6 +40,9 @@
          }
       },
       "runtime" : {
+         "recommends" : {
+            "With::Roles" : "0"
+         },
          "requires" : {
             "Carp" : "0",
             "Role::Tiny" : "2.000001",
