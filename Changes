@@ -1,4 +1,6 @@
 {{$NEXT}}
+
+1.000     2020-02-07 13:03:27 EST
   - Fix DateTime::TimeZone tests to not run unless DateTime::Duration is also installed (#1)
   - Use With::Roles to simplify usage examples
 
