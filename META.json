@@ -66,7 +66,7 @@
    "provides" : {
       "Time::Moment::Role::TimeZone" : {
          "file" : "lib/Time/Moment/Role/TimeZone.pm",
-         "version" : "0.004"
+         "version" : "1.000"
       }
    },
    "release_status" : "stable",
@@ -81,7 +81,7 @@
          "web" : "https://github.com/Grinnz/Time-Moment-Role-TimeZone"
       }
    },
-   "version" : "0.004",
+   "version" : "1.000",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.030001"
@@ -270,7 +270,7 @@
                   "branch" : null,
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "0.004",
+                  "tag" : "1.000",
                   "tag_format" : "%v",
                   "tag_message" : "%v"
                },
